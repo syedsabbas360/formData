@@ -1,0 +1,37 @@
+body{
+  width: 80%;
+  margin-left: 10vw;
+  border: .2vw solid lightgrey;
+  border-radius: 1vw;
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  background:#3274C1;
+  color:white;
+  border-radius: 1vw;
+  display: flex;
+  align-items: center;
+}
+
+h1{
+  font-weight: lighter;
+  padding: 3vw;
+  padding-bottom: 0;
+  margin-top:0;
+  color: white;
+  font-size: 1.3em;
+}
+
+.submit-form{
+  background:#BDD5ED;
+  padding: 3vw;
+}
+
+.submit-button{
+  background:#3274C1;
+  color:white;
+  padding: 1vw;
+  border-radius: 1vw;
+  font-size: .7em;
+}
