@@ -76,27 +76,25 @@ var formData = [{
   }
 ];
 
+
 for (let i = 0; i < formData.length; i++) {
-  console.log(formData[i].type)
-  let form = document.querySelector('.form')
-  let select = document.createElement("select")
-  let options = document.createElement("ul");
-  let langList= document.createElement("li");
-  //add text content to langList.  The content must be extracted
-  // from index=4 in formData .
-  // langList.textContent=?
+  let form = document.querySelector('.form');
   if (formData[i].type === "select") {
-    select.placeholder = formData[i].label
-    select.style = "display: flex; margin: 3vw; width: 90%;"
-    select.appendChild(options);
-    options.appendChild(langList);
+    let select = document.createElement('select');
+    select.id = formData[i].id;
     form.appendChild(select);
-    
+    for (let j = 0; j < formData[i].options.length; j++) {
+      let ops = document.createElement('option');
+      ops.textContent = formData[i].options[j].label;
+      ops.value = formData[i].options[j].value;
+      select.appendChild(ops);
+    }
   } else {
-    let input = document.createElement('input')
-    input.type = formData[i].type
-    input.placeholder = formData[i].label
-    input.style = "display: flex; margin: 3vw; width: 90%; "
-    form.appendChild(input)
+    let input = document.createElement('input');
+    input.type = formData[i].type;
+    input.placeholder = formData[i].label;
+    input.id = formData[i].id;
+    input.style = "display: flex; margin: 3vw; width: 90%; ";
+    form.appendChild(input);
   }
 }
